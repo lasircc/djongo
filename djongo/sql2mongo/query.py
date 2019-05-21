@@ -417,6 +417,7 @@ class InsertQuery(VoidQuery):
         )
 
         for i, val in enumerate(self._vals):
+            print (i, val)
             ins = {}
             if auto:
                 for name in auto['auto']['field_names']:
@@ -428,6 +429,7 @@ class InsertQuery(VoidQuery):
                 ):
                     continue
                 ins[fld] = v
+            print (ins)
             docs.append(ins)
 
         print (self.db_ref[self.left_table], docs)
