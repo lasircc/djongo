@@ -430,6 +430,7 @@ class InsertQuery(VoidQuery):
                 ins[fld] = v
             docs.append(ins)
 
+        print (self.db_ref[self.left_table], docs)
         res = self.db_ref[self.left_table].insert_many(docs, ordered=False)
         if auto:
             self._result_ref.last_row_id = auto['auto']['seq']
